@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 NAME="resume"
-pandoc "${NAME}.md" -f markdown -t html -c "${NAME}.css" -s -o "${NAME}.html"
+MODE="$1"
+pandoc "${NAME}.md" -f markdown -t html -c "${NAME}-${1}-mode.css" -s -o "${NAME}.html"
 open "${NAME}.html"
